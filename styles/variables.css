@@ -7,5 +7,7 @@
   --accent-color: #FF0070;
   --main-text-color: #F1B2CE;
   --accent-text-color: #DB00FF;
-  --main-font: IBM Plex Mono;
+  --main-font-family: IBM Plex Mono;
+  --main-text-size: 18px;
+  --bg-image: url(../images/cover-image-dark.png);
 }
