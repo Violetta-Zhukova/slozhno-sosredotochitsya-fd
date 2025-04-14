@@ -1,13 +1,13 @@
 :root {
   --main-color: #000028;
-  --accent-color: #FF0070;
-  --main-text-color: #F1B2CE;
-  --accent-text-color: #DB00FF;
+  --accent-color: #ff0070;
+  --main-text-color: #f1b2ce;
+  --accent-text-color: #db00ff;
   --main-font-family: IBM Plex Mono;
   --main-text-size: 18px;
   --bg-image: url(../images/cover-image-dark.png);
   --margin-top: 40px;
   --margin-bottom: 50px;
   --padding: 10px;
-  --accent-color-hover: rgba(255, 0, 112, 0.4)
+  --accent-color-hover: rgba(255, 0, 112, 0.4);
 }

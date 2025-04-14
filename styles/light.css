@@ -4,13 +4,125 @@
   переключая тему
 */
 
-:root.theme-light {
-  /* сохраните этот селектор в приведённом виде.
-    Так стили написанные ниже будут иметь больший вес,
-    чем стили в медиазапросе предпочтений пользователя
-  */
+:root {
+  --main-color: #fff1f7;
+  --accent-color: #ff8dcb;
+  --main-text-color: #353430;
+  --accent-text-color: #ffc2e6;
+  --bg-image: url(../images/cover-image-light.png);
+  --accent-color-hover: rgba(50, 49, 45, 0.4);
 }
 
-.theme-light .page {
-  /* Вам также нужно будет написать ряд подобных селекторов */
+:root.theme-light {
+  --main-color: #fff1f7;
+  --accent-color: #ff8dcb;
+  --main-text-color: #353430;
+  --accent-text-color: #ffc2e6;
+  --bg-image: url(../images/cover-image-light.png);
+  --accent-color-hover: rgba(50, 49, 45, 0.4);
+}
+
+.theme-light .decorated-zone::before {
+  border-block-start: 1px solid var(--main-text-color, #353430);
+  border-inline-end: 1px solid var(--main-text-color, #353430);
+}
+
+.theme-light .decorated-zone::after {
+  border-block-end: 1px solid var(--main-text-color, #353430);
+  border-inline-start: 1px solid var(--main-text-color, #353430);
+}
+
+.theme-light .header__decor {
+  visibility: hidden;
+}
+
+.theme-light .header__decor::after {
+  visibility: hidden;
+}
+
+.theme-light .header__theme-menu-button {
+  color: var(--main-text-color, #353430);
+}
+.theme-light .header__theme-menu-button:hover {
+  outline: 1px solid var(--accent-color-hover, rgba(50, 49, 45, 0.4));
+}
+
+.theme-light .header__theme-menu-button:focus-visible {
+  border-block-end: 1px solid var(--main-text-color, #353430);
+}
+
+.theme-light .header__theme-menu-button_active {
+  border: 1px solid var(--main-text-color, #353430);
+}
+
+.theme-light .header__subtitle {
+  color: var(--main-text-color, #353430);
+}
+
+.theme-light .content-section__title {
+  color: var(--main-text-color, #353430);
+}
+
+.theme-light .content-section__card-title {
+  color: var(--main-text-color, #353430);
+}
+
+.theme-light .img-section__title {
+  color: var(--main-text-color, #353430);
+}
+
+.theme-light .content-section__card-subtitle {
+  color: var(--main-text-color, #353430);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --main-color: #fff1f7;
+    --accent-color: #ff8dcb;
+    --main-text-color: #353430;
+    --accent-text-color: #ffc2e6;
+    --bg-image: url(../images/cover-image-light.png);
+    --accent-color-hover: rgba(50, 49, 45, 0.4);
+  }
+  .decorated-zone::before {
+    border-block-start: 1px solid var(--main-text-color, #353430);
+    border-inline-end: 1px solid var(--main-text-color, #353430);
+  }
+  .decorated-zone::after {
+    border-block-end: 1px solid var(--main-text-color, #353430);
+    border-inline-start: 1px solid var(--main-text-color, #353430);
+  }
+  .header__decor {
+    visibility: hidden;
+  }
+  .header__decor::after {
+    visibility: hidden;
+  }
+  .header__theme-menu-button {
+    color: var(--main-text-color, #353430);
+  }
+  .header__theme-menu-button:hover {
+    border: 1px solid var(--accent-color-hover, rgba(50, 49, 45, 0.4));
+  }
+  .header__theme-menu-button:focus-visible {
+    border-block-end: 1px solid var(--main-text-color, #353430);
+  }
+  .header__theme-menu-button_active {
+    border: 1px solid var(--main-text-color, #353430);
+  }
+  .header__subtitle {
+    color: var(--main-text-color, #353430);
+  }
+  .content-section__title {
+    color: var(--main-text-color, #353430);
+  }
+  .content-section__card-title {
+    color: var(--main-text-color, #353430);
+  }
+  .img-section__title {
+    color: var(--main-text-color, #353430);
+  }
+  .content-section__card-subtitle {
+    color: var(--main-text-color, #353430);
+  }
 }
