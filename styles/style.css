@@ -1,5 +1,3 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
 .page {
   background-color: var(--main-color, #000028);
   background-image: var(--bg-image);
@@ -15,8 +13,7 @@
 .header {
   display: grid;
   grid-template-rows: 1fr min-content 1fr;
-  padding-inline: 10px var(--padding);
-  padding-block: var(--padding);
+  padding: var(--padding);
   height: 100vh;
   min-height: 668px;
   align-items: center;
@@ -91,6 +88,18 @@
   color: var(--accent-color, #FF0070);
   border: none;
 }
+.header__theme-menu-button:hover {
+  border: 1px solid var(--accent-color-hover, rgba(255,0,112,0.4));
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  outline: none;
+  border-block-end: 1px solid var(--accent-color, #FF0070);;
+}
 
 .header__theme-menu-button_active {
   border: 1px solid var(--accent-color, #FF0070);
@@ -119,11 +128,14 @@
   display: grid;
   grid-template-columns: 1fr;
   padding-inline: var(--padding);
-  margin-block-start: var(--margin-top);
   margin-block-end: var(--margin-bottom);
   gap: 20px;
   align-items: start;
   justify-items: start;
+}
+
+.content-section:first-child {
+  margin-block-start: var(--margin-top);
 }
 
 .content-section__title {
@@ -133,7 +145,7 @@
   font-size: var(--main-text-size, 18px);
 }
 
-.content-section__content .content-section__card:not(:last-child){
+.content-section__card:not(:last-child){
   margin-block-end: 20px;
 }
 
@@ -144,7 +156,8 @@
   justify-content: flex-start;
 }
 
-.content-section__card-title {
+.content-section__card-title,
+.img-section__title {
   color: var(--main-color, #000028);
   font-weight: 700;
   line-height: 1.3;
@@ -152,12 +165,13 @@
 }
 
 .content-section__content > .content-section__card-title {
-  margin-block-end: 20px;
+  margin-block-end: 19px;
 }
 
 .content-section__card-subtitle {
   color: var(--main-color, #000028);
   line-height: 1.3;
+  font-weight: 400;
 }
 
 .content-section__card-text {
@@ -167,4 +181,127 @@
 .content-section__card-text-link {
   text-shadow: 2px 1px 0 var(--accent-color, #FF0070);
   text-decoration: none;
+}
+
+.content-section__card-text-link:hover {
+  border-block-end: 1px solid currentColor;
+} 
+
+.content-section__card-text-link:focus {
+  outline: none;
+}
+
+.content-section__card-text-link:focus-visible {
+  outline: 1px solid currentColor;
+}
+
+.img-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding-inline: var(--padding);
+  margin-block-start: var(--margin-top);
+  gap: var(--padding);
+  align-items: start;
+  justify-items: stretch;
+}
+
+.img-section__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.footer {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  margin-block-start: var(--margin-top);
+  padding: var(--padding);
+  height: 100vh;
+  min-height: 668px;
+}
+
+.footer__title {
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  font-weight: 700;
+  line-height: 0.83;
+  color: var(--accent-text-color, #DB00FF);
+  text-shadow: 2px 2px 0 var(--accent-color, #FF0070);
+}
+
+@media (width > 768px) {
+  :root {
+    --margin-top: 60px;
+    --margin-bottom: 80px;
+    --padding: 20px;
+  }
+  .header__decor {
+    right: 48px;
+  }
+  .header__title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    margin-inline-start: -20px;
+  }
+  .header__subtitle {
+    justify-self: end;
+    width: 50%;
+  }
+  .content-section {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .content-section__title {
+    grid-column: 1;
+  }
+  .content-section__content {
+    grid-column: span 2;
+  }
+  .content-section:nth-child(2) .content-section__content {
+    grid-column: 1 / 4;
+  }
+  .img-section {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .img-section__title {
+    grid-column: 1 / 4;
+    grid-row: 1;
+  }
+  .img-section__img_sunset {
+    grid-column: 1 / 3;
+    grid-row: 2;
+  }
+  .img-section__img_ice-cream {
+    grid-column: 3 / 4;
+    grid-row: 2 / 4;
+  }
+  .img-section__img_tape {
+    grid-column: 1;
+    grid-row: 3 / 5;
+  }
+  .img-section__img_books {
+    grid-column: 2;
+    grid-row: 3;
+  }
+  .img-section__img_street {
+    grid-column: 2 / 4;
+    grid-row: 4;
+  }
+  .footer__title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+}
+
+@media (width > 1024px) {
+  .header__theme-menu {
+    justify-self: center;
+    align-self: start;
+  }
+  .header__theme-menu-list {
+    flex-direction: row;
+  }
+  .content-section:nth-child(2) .content-section__content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
 }
