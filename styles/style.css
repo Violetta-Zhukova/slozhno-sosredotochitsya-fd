@@ -83,10 +83,12 @@
 }
 
 .header__theme-menu-button {
-  padding: 0.5px 13px 2px 11px;
+  padding: 2.5px 13px 5.5px 11px;
   background-color: transparent;
   color: var(--accent-color, #ff0070);
   border: none;
+  line-height: 1;
+  font-size: var(--main-text-size, 18px);
 }
 .header__theme-menu-button:hover {
   outline: 1px solid var(--accent-color-hover, rgba(255, 0, 112, 0.4));
