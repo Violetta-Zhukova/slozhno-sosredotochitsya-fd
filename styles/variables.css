@@ -1,13 +1,16 @@
 :root {
-  --main-color: #000028;
+  --bg-color: #000028;
   --accent-color: #ff0070;
   --main-text-color: #f1b2ce;
-  --accent-text-color: #db00ff;
+  --title-color: #ff0070;
+  --subtitle-color: #000028;
+  --accent-title-color: #db00ff;
+  --decorated-zone-color: #ff0070;
+  --accent-color-hover: rgba(255, 0, 112, 0.4);
   --main-font-family: IBM Plex Mono;
   --main-text-size: 18px;
   --bg-image: url(../images/cover-image-dark.png);
   --margin-top: 40px;
   --margin-bottom: 50px;
   --padding: 10px;
-  --accent-color-hover: rgba(255, 0, 112, 0.4);
 }
